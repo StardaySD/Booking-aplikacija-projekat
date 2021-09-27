@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const config = require('./config');l
+const config = require('./config');
 const MongoClient = require('mongodb').MongoClient;
 const cors = require('cors');
 
@@ -23,7 +23,7 @@ MongoClient.connect(`mongodb://${config.dbHost}`, {
   .then(client =>{
     const db = client.db(config.dbName);
     const Collection = db.collection(config.dbCollection);
-    app.local[config.dbCollection] = collection;
+    app.locals[config.dbCollection] = collection;
   })
 
 
