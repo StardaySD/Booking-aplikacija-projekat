@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const ObjectId = require('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
 //Pravimo 3 putanje
 
@@ -23,7 +23,7 @@ router.post('/appointments', (req, res, next) => {
 
   const payload = { appointmentDate, name, email};
   req.collection.insertOne(payload)
-    .then(result => res.json(result))
+    .then(result => res.json(result.ops[0]))
     .catch(error => res.send(error));
 });
 
