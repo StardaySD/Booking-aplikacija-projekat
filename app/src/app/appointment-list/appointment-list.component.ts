@@ -37,7 +37,7 @@ export class AppointmentListComponent implements OnInit {
       )
       .subscribe((appointments: Appointment[]) => {
         this.appointments = appointments;
-        this.successMsg = 'Successfully cancelled appointment';
+        this.successMsg = 'Successfully cancelled appointment / Uspešno otkazan sastanak';
       },
       (error: ErrorEvent) => {
         this.errorMsg = error.error.message;
