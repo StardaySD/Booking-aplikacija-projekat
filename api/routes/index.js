@@ -5,7 +5,7 @@ const ObjectID = require('mongodb').ObjectID;
 //Pravimo 3 putanje
 
 //Get putanja za zakaze u bazi
-router.get('/appointments', (req, res, next)=>{
+router.get('/Booking-aplikacija-projekat', (req, res, next)=>{
   req.collection.fin({})
   .toArray()
   .then(results => res.jason(results))
@@ -13,7 +13,7 @@ router.get('/appointments', (req, res, next)=>{
 });
 
 //Host endpoint za kreiranje novih sastanaka
-router.post('/appointments', (req, res, next) => {
+router.post('/Booking-aplikacija-projekat', (req, res, next) => {
   const { appointmentDate, name, email} = req.body;
   if (!appointmentDate || !name || !email) {
     return res.status(400).json({
@@ -29,9 +29,9 @@ router.post('/appointments', (req, res, next) => {
 
 //Kada kliknemo na otkazi u Admin panelu zelimo da koristimo Delete endpoint koji brise podatke iz baze podataka
 
-router.delete('/appointments/:id', (req, res, next) => {
+router.delete('/Booking-aplikacija-projekat/:id', (req, res, next) => {
   const { id } = req.params;
-  const _id = ObjectID(id);
+  const _id = ObjectId(id);
 
   req.collection.deleteOne({ _id })
     .then(result => res.json(result))
