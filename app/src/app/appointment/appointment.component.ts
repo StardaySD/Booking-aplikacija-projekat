@@ -29,7 +29,7 @@ export class AppointmentComponent implements OnInit {
         this.name = '';
         this.email = '';
         const appointmentDate = new Date(createdAppointment.appointmentDate).toDateString();
-        this.successMsg = `Appointment Booked Successfully for ${appointmentDate}`;
+        this.successMsg = `Appointment Booked Successfully for ${appointmentDate} / Sastanak uspešno zakazan za ${appointmentDate}`;
       },
       (error: ErrorEvent) => {
         this.errorMsg = error.error.message;

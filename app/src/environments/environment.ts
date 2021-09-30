@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000',
+  //deklarisemo gde nas express api radi
+  API_URL: 'http://localhost:4200',
 };
 
 /*
